@@ -1,0 +1,53 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+station-f-frontend/dist
+station-f-frontend/tmp
+station-f-frontend/out-tsc
+station-f-frontend/out
+station-f-backend/dist
+station-f-backend/tmp
+station-f-backend/out-tsc
+station-f-backend/out
+
+# dependencies
+station-f-frontend/node_modules
+station-f-backend/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+station-f-frontend/.vscode/*
+station-f-frontend/.vscode
+station-f-frontend/!.vscode/settings.json
+station-f-frontend/!.vscode/tasks.json
+station-f-frontend/!.vscode/launch.json
+station-f-frontend/!.vscode/extensions.json
+station-f-backend/.vscode/*
+station-f-backend/!.vscode/settings.json
+station-f-backend/!.vscode/tasks.json
+station-f-backend/!.vscode/launch.json
+station-f-backend/!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+station-f-frontend/.DS_Store
+station-f-frontend/Thumbs.db
+station-f-backend/.DS_Store
+station-f-backend/Thumbs.db
