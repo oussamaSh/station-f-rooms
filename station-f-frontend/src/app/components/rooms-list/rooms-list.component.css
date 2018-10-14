@@ -1,0 +1,51 @@
+.card-deck {
+    padding: 15px 15px 15px 15px;
+}
+
+.bar {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #989898;
+    height: 40px;
+    padding-top: 5px;
+    text-align: left;
+    color: white;
+    padding-bottom: 37px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.bgBar {
+    margin-left: 20px;
+    background-color: rgba(47, 53, 58, 0.1);
+    padding: 0px 20px 8px 20px;
+}
+
+.roomsWrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 20px;
+    padding: 30px 20px 30px 20px;
+    font-size: 15px;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    color: #0079ac;
+    cursor: pointer;
+}
+
+
+.card:hover {
+    background-color: #e8e8e8;
+}
+
+.card-footer {
+    text-align: center;
+}
+
+.card-img-top {
+    cursor: pointer;
+}

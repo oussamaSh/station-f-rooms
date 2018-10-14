@@ -1,0 +1,46 @@
+<div class="col-md-12">
+  <div class="card-deck" *ngFor="let room of allRooms">
+      <div class="card h-100" >
+        <div class="card-body">
+        <div class="card-title">
+      <span (click)="openModalDetails(room)">{{room.name}} </span>
+      <span class="badge badge-primary">Capacité max: {{room.capacity}} Personnes</span>
+        </div>
+            <hr>
+          <p class="card-text">{{room.description}}</p>
+            <p>Equipements: <span class="badge badge-secondary" *ngFor="let equipment of room.equipements">{{equipment.name}}</span></p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-md btn-outline-primary" (click)="open(content)">Réserver</button>
+        </div>
+      </div>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="dateOfBirth">Date of birth</label>
+        <div class="input-group">
+          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" routerLink="/room-reservation" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+
+
+<pre>{{closeResult}}</pre>

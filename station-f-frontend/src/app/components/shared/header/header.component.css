@@ -1,0 +1,7 @@
+.navbarCustom{
+    background: linear-gradient(to top, #2C7BFF 0%, #A200FF 100%);
+    background-image: linear-gradient(to top, rgb(44, 123, 255) 0%, rgb(162, 0, 255) 100%);
+}
+.logo-container{
+    cursor: pointer;
+}
