@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors({
-  origin: ['http://ec2-54-229-44-232.eu-west-1.compute.amazonaws.com:8080'],
+  origin: ['http://localhost:4200'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true // enable set cookie
 }));

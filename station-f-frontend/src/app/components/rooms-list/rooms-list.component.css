@@ -60,6 +60,19 @@
     align-items: center;
 }
 
+@media only screen and (max-width: 900px){
+    .searchContainer{
+        grid-template-columns: 1fr 1fr;
+        height: 250px;
+    }
+}
+@media only screen and (max-width: 600px){
+    .searchContainer{
+        height: 250px;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 .searchContainerCell{
 
  padding-left: 20px;
