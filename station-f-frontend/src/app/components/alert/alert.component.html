@@ -1,0 +1,4 @@
+<div *ngIf="message && !isHidden"
+[ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error', 'alert-dismissible': true }">{{message.text}}
+<button class="close" (click)="closeAlert()">&times;</button> 
+</div>

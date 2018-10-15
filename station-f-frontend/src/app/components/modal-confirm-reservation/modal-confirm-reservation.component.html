@@ -1,0 +1,57 @@
+  <div [@fadeInOut]>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Confirmation de réservation {{roomById.name}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+  <span class="nb">NB: Tous les champs sont obligatoires !</span>
+  <form [formGroup]="formConfirmReservation">
+     <div class="searchContainer">
+      <div class="searchContainerCell">
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd"
+             formControlName="confirmReservationDate" ngbDatepicker
+             #confirmReservationDate="ngbDatepicker" required [ngClass]="{ 'is-invalid': (confirmReservationDate.dirty || confirmReservationDate.touched) && confirmReservationDate.errors }">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="confirmReservationDate.toggle()" type="button"></button>
+      </div>
+       <app-error-display [showError]="isValid('confirmReservationDate')" *ngIf="confirmReservationDate?.errors?.required" errorMessage="Ce champ est obligatoire !">
+          </app-error-display>
+    </div>
+  </div>
+      <div class="searchContainerCell">
+     <ngb-timepicker formControlName="confirmReservationStartTime" required [ngClass]="{ 'is-invalid': (confirmReservationStartTime.dirty || confirmReservationStartTime.touched) && confirmReservationStartTime.errors }"></ngb-timepicker>
+       <app-error-display [showError]="isValid('confirmReservationStartTime')" *ngIf="confirmReservationStartTime?.errors?.required" errorMessage="Ce champ est obligatoire !">
+          </app-error-display>
+    </div>
+    <div class="searchContainerCell">
+      <select formControlName="confirmReservationEndTime" [ngClass]="{ 'is-invalid': (confirmReservationEndTime.dirty || confirmReservationEndTime.touched) && confirmReservationEndTime.errors }" class="form-control">
+         <option value="" disabled>Durée</option>
+        <option value="1">1 Heure</option>
+         <option value="2">2 Heures</option>
+          <option value="3">3 Heures</option>
+          <option value="4">4 Heures</option>
+      </select>
+       <app-error-display [showError]="isValid('confirmReservationEndTime')" *ngIf="confirmReservationEndTime?.errors?.required" errorMessage="Ce champ est obligatoire !">
+          </app-error-display>
+    </div>
+   <div class="searchContainerCell">
+   <input type="number" placeholder="Nombre de personnes" class="form-control" [ngClass]="{ 'is-invalid': (confirmNbrPersons.dirty || confirmNbrPersons.touched) && confirmNbrPersons.errors }" formControlName="confirmNbrPersons">
+    <app-error-display [showError]="isValid('confirmNbrPersons')" *ngIf="confirmNbrPersons?.errors?.required" errorMessage="Ce champ est obligatoire !">
+          </app-error-display>
+    </div>
+  </div>
+ 
+</form>
+   <p>Capacité max: <span class="badge badge-primary"> {{roomById.capacity}} Personnes</span></p>
+   <p>Equipements: <span class="badge badge-secondary" *ngFor="let equipment of roomById.equipements">{{equipment.name}}</span></p>
+<p *ngFor="let alert of alerts">
+  <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
+</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" [disabled]="!formConfirmReservation.valid" class="btn btn-outline-dark" (click)="makeReservation(formConfirmReservation)">Valider réservation</button>
+  </div>
+  </div>

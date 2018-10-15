@@ -1,3 +1,5 @@
-<p>
-  error-display works!
-</p>
+<div *ngIf="showError" >
+  <div class="error-message">
+    {{errorMessage}}
+  </div>
+</div>

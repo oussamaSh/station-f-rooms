@@ -55,7 +55,6 @@ export class ValidateReservationComponent implements OnInit {
     reservation.nbrPersons = formMakeReservation.value.nbrPersons;
     reservation.roomId = this.roomId;
     console.log(reservation.reservationDate);
-    console.log(reservation.reservationStartTime);
     this.roomsService.makeReservation(this.roomId, reservation).subscribe(createdReservation => {
       console.log(createdReservation);
     },

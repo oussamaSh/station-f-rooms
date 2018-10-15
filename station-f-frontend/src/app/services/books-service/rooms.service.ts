@@ -22,4 +22,8 @@ export class RoomsService {
   makeReservation(roomId, newReservation) {
     return this.http.put(Globals.URL + '/rooms/makeReservation/' + roomId, newReservation);
   }
+
+  searchAvailableRooms(reservationDetails): Observable<Room[]> {
+    return this.http.post<Room[]>(Globals.URL + '/rooms/searchAvailableRooms', reservationDetails).pipe();
+  }
 }

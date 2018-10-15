@@ -1,7 +1,7 @@
 export class Reservation {
 
-    public reservationDate: Date;
-    public reservationStartTime: Date;
+    public reservationDate: String;
+    public reservationStartTime: String;
     public reservationEndTime: Date;
     public nbrPersons: number;
     public roomId: string;

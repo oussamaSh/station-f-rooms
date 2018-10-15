@@ -1,0 +1,23 @@
+
+.searchContainer{
+    display: grid;
+    border: 2px rgba(114, 186, 94, 0.35);
+    height: 150px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    background: rgba(114, 186, 94, 0.05);
+    align-items: center;
+}
+
+.searchContainerCell{
+
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-bottom: 20px;
+ padding-top: 20px;
+}
+
+.nb{
+    color: firebrick;
+    font-size: 13px;
+}

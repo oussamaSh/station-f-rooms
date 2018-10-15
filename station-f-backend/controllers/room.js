@@ -27,3 +27,12 @@ exports.getRoomByID = function (req, res) {
       res.json({ error });
     });
 };
+
+exports.searchAvailableRooms = function (req, res) {
+  return roomService.searchAvailableRooms(req, res).then(foundRooms => {
+    res.json(foundRooms);
+  })
+    .catch(error => {
+      res.json({ error });
+    });
+};

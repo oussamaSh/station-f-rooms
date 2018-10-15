@@ -17,6 +17,10 @@ router.get('/getRoomById/:_id', (req, res, next) => {
   roomsController.getRoomByID(req,res);
 });
 
+router.post('/searchAvailableRooms', (req, res, next) => {
+  roomsController.searchAvailableRooms(req,res);
+});
+
 router.post('/', (req, res, next) => {
   var room = new Room({
     name: req.body.name,

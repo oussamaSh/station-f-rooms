@@ -11,6 +11,11 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ValidateReservationComponent } from './components/validate-reservation/validate-reservation.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ModalConfirmReservationComponent } from './components/modal-confirm-reservation/modal-confirm-reservation.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AlertComponent } from './components/alert/alert.component';
+import { RoomsPipe } from './pipes/rooms.pipe';
 
 @NgModule({
   declarations: [
@@ -19,15 +24,21 @@ import { ValidateReservationComponent } from './components/validate-reservation/
     ErrorDisplayComponent,
     RoomsMainComponent,
     RoomsListComponent,
-    ValidateReservationComponent
+    ValidateReservationComponent,
+    ModalConfirmReservationComponent,
+    AlertComponent,
+    RoomsPipe
   ],
+  entryComponents: [ModalConfirmReservationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    BsDatepickerModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
