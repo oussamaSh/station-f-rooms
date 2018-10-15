@@ -5,6 +5,13 @@ import { ValidateReservationComponent } from './components/validate-reservation/
 
 const routes: Routes = [
   {
+    path: '',
+    component: RoomsMainComponent,
+    data: {
+      title: 'StationF Rooms'
+    }
+  },
+  {
     path: 'rooms',
     component: RoomsMainComponent,
     data: {
