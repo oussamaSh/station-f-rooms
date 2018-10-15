@@ -14,4 +14,12 @@ export class RoomsService {
   getAllRooms(): Observable<Room[]> {
     return this.http.get<Room[]>(Globals.URL + '/rooms').pipe();
   }
+
+  getRoomById(roomId): Observable<Room> {
+    return this.http.get<Room>(Globals.URL + '/rooms/getRoomById/' + roomId).pipe();
+  }
+
+  makeReservation(roomId, newReservation) {
+    return this.http.put(Globals.URL + '/rooms/makeReservation/' + roomId, newReservation);
+  }
 }

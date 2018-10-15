@@ -6,11 +6,11 @@ export class Reservation {
     public nbrPersons: number;
     public roomId: string;
 
-    constructor(reservationDate,
-                reservationStartTime,
-                reservationEndTime,
-                nbrPersons,
-                roomId) {
+    constructor(reservationDate?,
+                reservationStartTime?,
+                reservationEndTime?,
+                nbrPersons?,
+                roomId?) {
         this.reservationDate = reservationDate;
         this.reservationStartTime = reservationStartTime;
         this.reservationEndTime = reservationEndTime;

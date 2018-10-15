@@ -12,7 +12,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'room-reservation',
+    path: 'room-reservation/:_id',
     component: ValidateReservationComponent,
     data: {
       title: 'Room Reservation'

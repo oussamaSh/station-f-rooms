@@ -9,11 +9,11 @@ export class Room {
     public reservations: Reservation[];
 
 
-    constructor(name,
-                description,
-                capacity,
-                equipements,
-                reservations) {
+    constructor(name?,
+                description?,
+                capacity?,
+                equipements?,
+                reservations?) {
         this.name = name;
         this.description = description;
         this.capacity = capacity;

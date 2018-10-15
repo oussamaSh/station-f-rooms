@@ -18,3 +18,12 @@ exports.makeReservation = function (req, res) {
       res.json({ error });
     });
 };
+
+exports.getRoomByID = function (req, res) {
+  return roomService.getRoomById(req, res).then(foundRoom => {
+    res.json(foundRoom);
+  })
+    .catch(error => {
+      res.json({ error });
+    });
+};

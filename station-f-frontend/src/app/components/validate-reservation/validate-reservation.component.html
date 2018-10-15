@@ -1,18 +1,26 @@
 <app-header></app-header>
+<form [formGroup]="formMakeReservation">
+<input type="date" formControlName="reservationDate">
+<input type="time" formControlName="reservationStartTime">
+<input type="time" formControlName="reservationEndTime">
+<input type="number" formControlName="nbrPersons">
+
+
 <div class="col-md-12">
   <div class="card-deck">
       <div class="card h-100" >
         <div class="card-body">
         <div class="card-title">
-      <span (click)="openModalDetails(room)"></span>
-      <span class="badge badge-primary">Capacité max:  Personnes</span>
+       <span (click)="openModalDetails(room)">{{room.name}} </span>
+      <span class="badge badge-primary">Capacité max: {{room?.capacity}} Personnes</span>
         </div>
             <hr>
-            <p>Equipements: <span class="badge badge-secondary"> ffff</span></p>
+            <p>Equipements: <span class="badge badge-secondary" *ngFor="let equipment of room.equipements">{{equipment.name}}</span></p>
         </div>
         <div class="card-footer">
-          <button class="btn btn-md btn-outline-primary">Réserver</button>
+          <button type="button" class="btn btn-md btn-outline-primary" (click)="makeReservation(formMakeReservation)" >Réserver</button>
         </div>
       </div>
   </div>
 </div>
+</form>
