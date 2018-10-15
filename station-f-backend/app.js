@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors({
-  origin: ['http://ec2-176-34-131-11.eu-west-1.compute.amazonaws.com:8080'],
+  origin: ['http://ec2-54-229-44-232.eu-west-1.compute.amazonaws.com:8080'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true // enable set cookie
 }));
